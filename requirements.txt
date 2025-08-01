@@ -1,0 +1,17 @@
+# Dependencias del Sistema de Punto de Ventas
+# Python 3.8+
+
+# Interfaz gráfica (incluida con Python)
+# tkinter - No requiere instalación, viene con Python
+
+# Base de datos
+# sqlite3 - No requiere instalación, viene con Python
+
+# Utilidades adicionales (opcionales)
+pillow>=9.0.0  # Para manejo de imágenes
+reportlab>=3.6.0  # Para generar reportes PDF
+python-dateutil>=2.8.0  # Para manejo de fechas
+
+# Testing
+pytest>=7.0.0
+pytest-tkinter>=0.1.0 
