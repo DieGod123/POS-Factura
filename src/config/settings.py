@@ -7,6 +7,9 @@ import os
 import json
 from pathlib import Path
 
+# Constante para la ruta de la base de datos
+DB_PATH = "database/pos_database.db"
+
 
 class Settings:
     """Clase para manejar la configuración del sistema"""

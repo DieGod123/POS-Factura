@@ -11,10 +11,10 @@ from tkinter import font as tkfont
 class MainWindow:
     """Clase para la ventana principal del sistema POS"""
     
-    def __init__(self, root, db_manager):
+    def __init__(self, root, db_manager, current_user=None):
         self.root = root
         self.db_manager = db_manager
-        self.current_user = None
+        self.current_user = current_user
         
         # Configurar el estilo
         self.setup_styles()
@@ -151,7 +151,11 @@ class MainWindow:
         # Información básica
         ttk.Label(info_frame, text="Versión: 1.0.0").grid(row=0, column=0, sticky=tk.W)
         ttk.Label(info_frame, text="Base de datos: SQLite").grid(row=1, column=0, sticky=tk.W)
-        ttk.Label(info_frame, text="Usuario actual: No autenticado").grid(row=2, column=0, sticky=tk.W)
+        
+        # Información del usuario
+        user_text = f"Usuario: {self.current_user['username']} ({self.current_user['rol']})" if self.current_user else "Usuario: No autenticado"
+        self.user_label = ttk.Label(info_frame, text=user_text)
+        self.user_label.grid(row=2, column=0, sticky=tk.W)
     
     def create_status_frame(self):
         """Crear frame de estado"""
@@ -218,6 +222,13 @@ class MainWindow:
         """Abrir ventana de usuarios"""
         messagebox.showinfo("Usuarios", "Función de usuarios - En desarrollo")
         # TODO: Implementar ventana de usuarios
+    
+    def update_user_info(self, user_data):
+        """Actualizar información del usuario en la interfaz"""
+        self.current_user = user_data
+        if hasattr(self, 'user_label'):
+            user_text = f"Usuario: {user_data['username']} ({user_data['rol']})"
+            self.user_label.config(text=user_text)
     
     def exit_application(self):
         """Salir de la aplicación"""

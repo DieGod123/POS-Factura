@@ -4,6 +4,7 @@ Un sistema de punto de ventas completo desarrollado en Python con Tkinter y SQLi
 
 ##  Características
 
+- **Sistema de autenticación** con login seguro
 - **Interfaz gráfica moderna** con Tkinter
 - **Base de datos SQLite** para almacenamiento local
 - **Gestión de productos** pronta implementacion de codigo de barras
@@ -64,6 +65,14 @@ POS-Factura/
    ```bash
    python main.py
    ```
+
+### Credenciales por defecto
+
+Al ejecutar la aplicación por primera vez, se creará automáticamente un usuario administrador:
+
+- **Usuario:** `admin`
+- **Contraseña:** `admin123`
+
 
 ##  Funcionalidades Principales
 
